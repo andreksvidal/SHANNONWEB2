@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <title>Xeon | OnePage Responsive Theme</title>
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <%= csrf_meta_tags %>
+   <%stylesheet_link_tag "bootstrap.min.css"%>
+   <%stylesheet_link_tag "font-awesome.min.css"%>
+   <%stylesheet_link_tag "prettyPhoto.css"%>
+   <%stylesheet_link_tag "main.css"%>
+   <%favicon_link_tag "/assets/ico/favicon.ico"%>
+</head>
+<body  data-spy="scroll" data-target="#navbar" data-offset="0">
+   <header id="header" role="banner">
+      <div class="container">
+        <%if user_signed_in?%>
+            <%=render 'welcome/navegacionSimple'%>
+        <%else%>
+            <%=render 'welcome/navegacionSimple'%>
+        <%end%>
+      </div>
+   </header>
+   <!--/#header-->
+   <%=yield%>
+   <footer id="footer">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-6" style="color:#0341ad;">
+               &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+            </div>
+            <div class="col-sm-6">
+               <img class="pull-right" src="/assets/shapebootstrap.png" alt="ShapeBootstrap" title="ShapeBootstrap">
+            </div>
+         </div>
+      </div>
+
+      
+   </footer>
+   <!--/#footer-->
+   <%javascript_include_tag "jquery.isotope.min" %>
+   <%javascript_include_tag "jquery.prettyPhoto" %>
+   <%javascript_include_tag "main" %>
+</body>
+</html>
